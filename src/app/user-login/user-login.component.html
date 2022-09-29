@@ -1,10 +1,14 @@
 <div class="main_div">
   <div class="containerdiv">
-    <form>
-      <div><input type="text" placeholder="username" /></div>
-      <div><input type="password" placeholder="password" /></div>
+    <form #fo="ngForm"   (ngSubmit)="data(fo.value)" method="post">
+      <div><input type="text" name="username" placeholder="username" ngModel /></div>
+      <div><input type="password" name="password" placeholder="password" ngModel/></div>
 
     <div class="mdn"> <input type="submit" class="btn btn-primary" value="submit"></div>
     </form>
+   
   </div>
+  <span>{{data1 |json}}</span>
+  <span>{{data1.password}}</span>
+
 </div>
